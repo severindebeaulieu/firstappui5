@@ -1,8 +1,9 @@
-<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="demo.view.App" resourceBundleName="demo.i18n.messageBundle" resourceBundleAlias="i18n" displayBlock="true">
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:demo="demo.ui" controllerName="demo.view.App" resourceBundleName="demo.i18n.messageBundle" resourceBundleAlias="i18n" displayBlock="true">
 	<Shell>
 		<App>
 			<Page title="{i18n>TITLE}" backgroundDesign="Solid">
 				<content>
+					<demo:SmartNavContainer></demo:SmartNavContainer>
 					<Input class="todoInput" value="{/newTodo}" placeholder="{i18n>INPUT_PLACEHOLDER}" change="addTodo" />
 					<List id="todo-list" items="{/todos}" select="toggleCompleted"
 						mode="MultiSelect"

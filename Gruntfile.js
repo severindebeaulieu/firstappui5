@@ -86,7 +86,7 @@ module.exports = function(grunt) {
 		watch: {
 			webapp: {
 				files: "<%= dir.webapp %>/**",
-				tasks: ["eslint"]
+				tasks: ["build"]
 			},
 			livereload: {
 				options: {
@@ -130,7 +130,7 @@ module.exports = function(grunt) {
 
 	// Default task
 	grunt.registerTask("default", [
-		"lint",
+		//"lint",
 		"clean",
 		"build",
 		"serve:dist",

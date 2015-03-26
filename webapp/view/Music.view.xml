@@ -1,0 +1,43 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:demo="demo.ui" controllerName="demo.view.Music"
+		  resourceBundleName="demo.i18n.messageBundle" resourceBundleAlias="i18n" displayBlock="true">
+	<Shell>
+		<App>
+			<Page title="{i18n>music.title}" backgroundDesign="Solid">
+				<content>
+<!--					<demo:SmartIconTabBar
+							class="iconTabBarPaddingTop"
+							id="idIconTabBarNoIcons">
+						<demo:items>
+							<IconTabFilter
+									text="Info">
+								<Text text="Info content goes here ..."/>
+							</IconTabFilter>
+							<IconTabFilter
+									text="Attachments">
+								<Text text="Attachments go here ..."/>
+							</IconTabFilter>
+							<IconTabFilter
+									text="Notes">
+								<Text text="Notes go here ..."/>
+							</IconTabFilter>
+							<IconTabFilter
+									text="People">
+								<Text text="People content goes here ..."/>
+							</IconTabFilter>
+						</demo:items>
+					</demo:SmartIconTabBar>-->
+					<Input class="musicSearch" value="{/newMusicSearch}" placeholder="{i18n>music.search.placeholder}"
+						   change="onSearchMusic"/>
+<!--
+
+					<List id="music-list" items="{/musics}"
+						  showNoData="false">
+					</List>
+-->
+
+
+				</content>
+			</Page>
+		</App>
+	</Shell>
+</mvc:View>

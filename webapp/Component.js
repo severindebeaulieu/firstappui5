@@ -6,6 +6,7 @@ sap.ui.core.UIComponent.extend("demo.Component", {
 		dependencies: {
 			libs: ["sap.m"]
 		},
-		rootView: "demo.view.App"
+		//rootView: "demo.view.App"
+		rootView: "demo.view.Music"
 	}
 });

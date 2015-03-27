@@ -1,4 +1,4 @@
-<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:demo="demo.ui" controllerName="demo.view.Music"
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:demo="demo.ui" controllerName="demo.view.Music"
 		  resourceBundleName="demo.i18n.messageBundle" resourceBundleAlias="i18n" displayBlock="true">
 	<Shell>
 		<App>
@@ -33,9 +33,14 @@
 						   inset="false"
 						   items="{
 							  path: '/itunesResult/results'
-							}">
+							}"
+							itemPress="onOpenDialog"
+							>
 						<columns>
 							<Column
+									hAlign="Left"
+									class="qty"
+									popinDisplay="Inline"
 									minScreenWidth="Tablet"
 									demandPopin="true">
 								<Text text="{i18n>music.cover}" />
@@ -54,15 +59,40 @@
 							</Column>
 						</columns>
 						<items>
-							<ColumnListItem>
+							<ColumnListItem
+									type="Navigation"
+									unread="false"
+									vAlign="Middle">
 								<cells>
-									<Image src="{artworkUrl30}" />
+									<Image src="{artworkUrl60}" />
 									<Text text="{artistName}" />
 									<Text text="{trackName}" />
 								</cells>
 							</ColumnListItem>
 						</items>
 					</Table>
+<!--					<l:VerticalLayout class="trackDetails">
+						<Image
+								class="coverImage"
+								src="{/play/artworkUrl100}">
+						</Image>
+						<Text
+								text="{/play/artistName}">
+						</Text>
+						<Text
+								text="{/play/trackName}">
+						</Text>
+						<Text
+								text="{/play/collectionName}">
+						</Text>
+						<demo:Audioplayer
+								src="{/play/previewUrl}"
+								logo="true"
+								>
+
+						</demo:Audioplayer>
+					</l:VerticalLayout>-->
+
 
 					<!--<List id="music-list" items="{/musics}"-->
 					<!--showNoData="false">-->
@@ -71,6 +101,7 @@
 
 
 				</content>
+
 			</Page>
 		</App>
 	</Shell>

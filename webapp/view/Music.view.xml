@@ -4,36 +4,70 @@
 		<App>
 			<Page title="{i18n>music.title}" backgroundDesign="Solid">
 				<content>
-<!--					<demo:SmartIconTabBar
-							class="iconTabBarPaddingTop"
-							id="idIconTabBarNoIcons">
-						<demo:items>
-							<IconTabFilter
-									text="Info">
-								<Text text="Info content goes here ..."/>
-							</IconTabFilter>
-							<IconTabFilter
-									text="Attachments">
-								<Text text="Attachments go here ..."/>
-							</IconTabFilter>
-							<IconTabFilter
-									text="Notes">
-								<Text text="Notes go here ..."/>
-							</IconTabFilter>
-							<IconTabFilter
-									text="People">
-								<Text text="People content goes here ..."/>
-							</IconTabFilter>
-						</demo:items>
-					</demo:SmartIconTabBar>-->
+					<!--					<demo:SmartIconTabBar
+                                                class="iconTabBarPaddingTop"
+                                                id="idIconTabBarNoIcons">
+                                            <demo:items>
+                                                <IconTabFilter
+                                                        text="Info">
+                                                    <Text text="Info content goes here ..."/>
+                                                </IconTabFilter>
+                                                <IconTabFilter
+                                                        text="Attachments">
+                                                    <Text text="Attachments go here ..."/>
+                                                </IconTabFilter>
+                                                <IconTabFilter
+                                                        text="Notes">
+                                                    <Text text="Notes go here ..."/>
+                                                </IconTabFilter>
+                                                <IconTabFilter
+                                                        text="People">
+                                                    <Text text="People content goes here ..."/>
+                                                </IconTabFilter>
+                                            </demo:items>
+                                        </demo:SmartIconTabBar>-->
 					<Input class="musicSearch" value="{/newMusicSearch}" placeholder="{i18n>music.search.placeholder}"
 						   change="onSearchMusic"/>
-<!--
 
-					<List id="music-list" items="{/musics}"
-						  showNoData="false">
-					</List>
--->
+					<Table id="idProductsTable"
+						   inset="false"
+						   items="{
+							  path: '/itunesResult/results'
+							}">
+						<columns>
+							<Column
+									minScreenWidth="Tablet"
+									demandPopin="true">
+								<Text text="{i18n>music.cover}" />
+							</Column>
+							<Column
+									minScreenWidth="Tablet"
+									demandPopin="true"
+									hAlign="Right">
+								<Text text="{i18n>music.artist}" />
+							</Column>
+							<Column
+									minScreenWidth="Tablet"
+									demandPopin="true"
+									hAlign="Right">
+								<Text text="{i18n>music.track}" />
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+									<Image src="{artworkUrl30}" />
+									<Text text="{artistName}" />
+									<Text text="{trackName}" />
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+
+					<!--<List id="music-list" items="{/musics}"-->
+					<!--showNoData="false">-->
+
+					<!--</List>-->
 
 
 				</content>

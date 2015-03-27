@@ -13,7 +13,32 @@ module.exports = function(grunt) {
 			options: {
 				port: 8080,
 				hostname: "localhost",
-				livereload: 35729
+				livereload: 35729,
+				base: "."
+			},
+			proxies: {
+				context: "/",
+				host: "itunes.apple.com",
+				changeOrigin: true
+			},
+			livereload: {
+				options: {
+					middleware: function(connect, options) {
+						if (!Array.isArray(options.base)) {
+							options.base = [options.base];
+						}
+
+						// Setup the proxy
+						var middlewares = [require("grunt-connect-proxy/lib/utils").proxyRequest];
+
+						// Serve static files.
+						options.base.forEach(function(base) {
+							middlewares.push(connect.static(base));
+						});
+
+						return middlewares;
+					}
+				}
 			},
 			src: {},
 			dist: {}
@@ -25,11 +50,7 @@ module.exports = function(grunt) {
 					"<%= dir.bower_components %>/openui5-sap.ui.core/resources",
 					"<%= dir.bower_components %>/openui5-sap.m/resources",
 					"<%= dir.bower_components %>/openui5-themelib_sap_bluecrystal/resources"
-				],
-				proxypath: 'proxy',
-				cors: {
-					origin: '*'
-				}
+				]
 			},
 			src: {
 				options: {

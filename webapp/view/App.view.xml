@@ -8,22 +8,22 @@
 							class="iconTabBarPaddingTop"
 							id="idIconTabBarNoIcons">
 						<demo:items>
-							<IconTabFilter
+							<demo:SmartIconTab
 									text="Info">
 								<Text text="Info content goes here ..."/>
-							</IconTabFilter>
-							<IconTabFilter
+							</demo:SmartIconTab>
+							<demo:SmartIconTab
 									text="Attachments">
 								<Text text="Attachments go here ..."/>
-							</IconTabFilter>
-							<IconTabFilter
+							</demo:SmartIconTab>
+							<demo:SmartIconTab
 									text="Notes">
 								<Text text="Notes go here ..."/>
-							</IconTabFilter>
-							<IconTabFilter
+							</demo:SmartIconTab>
+							<demo:SmartIconTab
 									text="People">
 								<Text text="People content goes here ..."/>
-							</IconTabFilter>
+							</demo:SmartIconTab>
 						</demo:items>
 					</demo:SmartIconTabBar>
 					<Input class="todoInput" value="{/newTodo}" placeholder="{i18n>INPUT_PLACEHOLDER}"

@@ -1,108 +1,146 @@
-<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:demo="demo.ui" controllerName="demo.view.Music"
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:demo="demo.ui"
+		  controllerName="demo.view.Music"
 		  resourceBundleName="demo.i18n.messageBundle" resourceBundleAlias="i18n" displayBlock="true">
 	<Shell>
 		<App>
-			<Page title="{i18n>music.title}" backgroundDesign="Solid">
-				<content>
-					<!--					<demo:SmartIconTabBar
-                                                class="iconTabBarPaddingTop"
-                                                id="idIconTabBarNoIcons">
-                                            <demo:items>
-                                                <IconTabFilter
-                                                        text="Info">
-                                                    <Text text="Info content goes here ..."/>
-                                                </IconTabFilter>
-                                                <IconTabFilter
-                                                        text="Attachments">
-                                                    <Text text="Attachments go here ..."/>
-                                                </IconTabFilter>
-                                                <IconTabFilter
-                                                        text="Notes">
-                                                    <Text text="Notes go here ..."/>
-                                                </IconTabFilter>
-                                                <IconTabFilter
-                                                        text="People">
-                                                    <Text text="People content goes here ..."/>
-                                                </IconTabFilter>
-                                            </demo:items>
-                                        </demo:SmartIconTabBar>-->
-					<Input class="musicSearch" value="{/newMusicSearch}" placeholder="{i18n>music.search.placeholder}"
-						   change="onSearchMusic"/>
+			<Carousel>
+				<pages>
 
-					<Table id="idProductsTable"
-						   inset="false"
-						   items="{
+					<Page title="{i18n>music.title}" backgroundDesign="Solid">
+
+						<content>
+
+							<!--					<demo:SmartIconTabBar
+                                                        class="iconTabBarPaddingTop"
+                                                        id="idIconTabBarNoIcons">
+                                                    <demo:items>
+                                                        <IconTabFilter
+                                                                text="Info">
+                                                            <Text text="Info content goes here ..."/>
+                                                        </IconTabFilter>
+                                                        <IconTabFilter
+                                                                text="Attachments">
+                                                            <Text text="Attachments go here ..."/>
+                                                        </IconTabFilter>
+                                                        <IconTabFilter
+                                                                text="Notes">
+                                                            <Text text="Notes go here ..."/>
+                                                        </IconTabFilter>
+                                                        <IconTabFilter
+                                                                text="People">
+                                                            <Text text="People content goes here ..."/>
+                                                        </IconTabFilter>
+                                                    </demo:items>
+                                                </demo:SmartIconTabBar>-->
+							<Input class="musicSearch" value="{/newMusicSearch}"
+								   placeholder="{i18n>music.search.placeholder}"
+								   change="onSearchMusic"/>
+
+							<Table id="idProductsTable"
+								   inset="false"
+								   items="{
 							  path: '/itunesResult/results'
 							}"
-							itemPress="onOpenDialog"
-							>
-						<columns>
-							<Column
-									hAlign="Left"
-									class="qty"
-									popinDisplay="Inline"
-									minScreenWidth="Tablet"
-									demandPopin="true">
-								<Text text="{i18n>music.cover}" />
-							</Column>
-							<Column
-									minScreenWidth="Tablet"
-									demandPopin="true"
-									hAlign="Right">
-								<Text text="{i18n>music.artist}" />
-							</Column>
-							<Column
-									minScreenWidth="Tablet"
-									demandPopin="true"
-									hAlign="Right">
-								<Text text="{i18n>music.track}" />
-							</Column>
-						</columns>
-						<items>
-							<ColumnListItem
-									type="Navigation"
-									unread="false"
-									vAlign="Middle">
-								<cells>
-									<Image src="{artworkUrl60}" />
-									<Text text="{artistName}" />
-									<Text text="{trackName}" />
-								</cells>
-							</ColumnListItem>
-						</items>
-					</Table>
-<!--					<l:VerticalLayout class="trackDetails">
-						<Image
-								class="coverImage"
-								src="{/play/artworkUrl100}">
-						</Image>
-						<Text
-								text="{/play/artistName}">
-						</Text>
-						<Text
-								text="{/play/trackName}">
-						</Text>
-						<Text
-								text="{/play/collectionName}">
-						</Text>
-						<demo:Audioplayer
-								src="{/play/previewUrl}"
-								logo="true"
-								>
+								   itemPress="onOpenDialog"
+									>
+								<columns>
+									<Column
+											hAlign="Left"
+											class="qty"
+											popinDisplay="Inline"
+											minScreenWidth="Tablet"
+											demandPopin="true">
+										<Text text="{i18n>music.cover}"/>
+									</Column>
+									<Column
+											minScreenWidth="Tablet"
+											demandPopin="true"
+											hAlign="Right">
+										<Text text="{i18n>music.artist}"/>
+									</Column>
+									<Column
+											minScreenWidth="Tablet"
+											demandPopin="true"
+											hAlign="Right">
+										<Text text="{i18n>music.track}"/>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem
+											type="Navigation"
+											unread="false"
+											vAlign="Middle">
+										<cells>
+											<Image src="{artworkUrl60}"/>
+											<Text text="{artistName}"/>
+											<Text text="{trackName}"/>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+							<!--					<l:VerticalLayout class="trackDetails">
+                                                    <Image
+                                                            class="coverImage"
+                                                            src="{/play/artworkUrl100}">
+                                                    </Image>
+                                                    <Text
+                                                            text="{/play/artistName}">
+                                                    </Text>
+                                                    <Text
+                                                            text="{/play/trackName}">
+                                                    </Text>
+                                                    <Text
+                                                            text="{/play/collectionName}">
+                                                    </Text>
+                                                    <demo:Audioplayer
+                                                            src="{/play/previewUrl}"
+                                                            logo="true"
+                                                            >
 
-						</demo:Audioplayer>
-					</l:VerticalLayout>-->
-
-
-					<!--<List id="music-list" items="{/musics}"-->
-					<!--showNoData="false">-->
-
-					<!--</List>-->
+                                                    </demo:Audioplayer>
+                                                </l:VerticalLayout>-->
 
 
-				</content>
+							<!--<List id="music-list" items="{/musics}"-->
+							<!--showNoData="false">-->
 
-			</Page>
+							<!--</List>-->
+
+
+						</content>
+
+					</Page>
+
+					<Page title="{i18n>TITLE}" backgroundDesign="Solid" showNavButton="true">
+						<content>
+							<Input class="todoInput" value="{/newTodo}" placeholder="{i18n>INPUT_PLACEHOLDER}"
+								   change="addTodo"/>
+							<List id="todo-list" items="{/todos}" select="toggleCompleted"
+								  mode="MultiSelect"
+								  growing="true"
+								  growingScrollToLoad="true"
+								  showNoData="false"
+								  showSeparators="None"
+								  rememberSelections="false">
+								<CustomListItem selected="{completed}">
+									<Input class="todoListInput" value="{title}"/>
+								</CustomListItem>
+							</List>
+						</content>
+						<footer>
+							<Bar>
+								<contentMiddle>
+									<Button visible="{/someCompleted}" icon="sap-icon://delete"
+											text="Clear completed ({/completedCount})" press="clearCompleted"/>
+								</contentMiddle>
+							</Bar>
+						</footer>
+					</Page>
+
+				</pages>
+			</Carousel>
+
+
 		</App>
 	</Shell>
 </mvc:View>

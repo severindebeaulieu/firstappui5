@@ -6,6 +6,10 @@
 			<Carousel>
 				<pages>
 
+					<!-- *******************************************************************************
+					*                                Page Music Itunes
+					******************************************************************************** -->
+
 					<Page title="{i18n>music.title}" backgroundDesign="Solid">
 
 						<content>
@@ -111,6 +115,11 @@
 
 					</Page>
 
+
+					<!-- *******************************************************************************
+					*                                Page TodoList
+					******************************************************************************** -->
+
 					<Page title="{i18n>TITLE}" backgroundDesign="Solid" showNavButton="true">
 						<content>
 							<Input class="todoInput" value="{/newTodo}" placeholder="{i18n>INPUT_PLACEHOLDER}"
@@ -136,6 +145,68 @@
 							</Bar>
 						</footer>
 					</Page>
+
+
+					<!-- *******************************************************************************
+					*                                Page WebService SOPRA
+					******************************************************************************** -->
+
+<!--					<Page title="{i18n>sopra.title}" backgroundDesign="Solid">
+
+						<content>
+
+							<Input class="musicSearch" value="{/newMusicSearch}"
+								   placeholder="{i18n>music.search.placeholder}"
+								   change="onSearchMusic"/>
+
+							<Table id="idProductsTable"
+								   inset="false"
+								   items="{
+							  path: '/itunesResult/results'
+							}"
+								   itemPress="onOpenDialog"
+									>
+								<columns>
+									<Column
+											hAlign="Left"
+											class="qty"
+											popinDisplay="Inline"
+											minScreenWidth="Tablet"
+											demandPopin="true">
+										<Text text="{i18n>music.cover}"/>
+									</Column>
+									<Column
+											minScreenWidth="Tablet"
+											demandPopin="true"
+											hAlign="Right">
+										<Text text="{i18n>music.artist}"/>
+									</Column>
+									<Column
+											minScreenWidth="Tablet"
+											demandPopin="true"
+											hAlign="Right">
+										<Text text="{i18n>music.track}"/>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem
+											type="Navigation"
+											unread="false"
+											vAlign="Middle">
+										<cells>
+											<Image src="{artworkUrl60}"/>
+											<Text text="{artistName}"/>
+											<Text text="{trackName}"/>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+
+
+						</content>
+
+					</Page>-->
+
 
 				</pages>
 			</Carousel>
